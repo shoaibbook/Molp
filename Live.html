@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Matches</title>
+    <style>
+        /* 🏆 خوبصورت بیک گراؤنڈ */
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white; 
+            text-align: center; 
+            margin: 0; 
+            padding: 0;
+        }
+
+        .container { 
+            padding: 50px; 
+        }
+
+        h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 🎨 بٹن اسٹائل */
+        .btn { 
+            padding: 15px 25px; 
+            font-size: 18px; 
+            margin: 10px; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 8px; 
+            transition: 0.3s ease-in-out;
+            font-weight: bold;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 🟥 اسکور بٹن */
+        .score-btn { 
+            background: #ff0000; 
+            color: white;
+        }
+        .score-btn:hover { 
+            background: #cc0000; 
+            transform: scale(1.05);
+        }
+
+        /* 🔵 ویڈیو بٹن */
+        .video-btn { 
+            background: #007bff; 
+            color: white; 
+        }
+        .video-btn:hover { 
+            background: #0056b3; 
+            transform: scale(1.05);
+        }
+
+        /* ✅ سرور بٹن */
+        .server-options { 
+            display: none; 
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .server-btn { 
+            background: #28a745; 
+            color: white; 
+            display: block; 
+            margin: 10px auto; 
+            width: 220px;
+        }
+
+        .server-btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Live Matches</h1>
+        <button class="btn score-btn" onclick="openScore()">SCORE</button>
+        <button class="btn video-btn" onclick="toggleServers()">VIDEO</button>
+
+        <div class="server-options" id="serverOptions">
+            <button class="btn server-btn" onclick="playStream('https://example.com/server1.m3u8')">Server 1</button>
+            <button class="btn server-btn" onclick="playStream('https://example.com/server2.m3u8')">Server 2</button>
+            <button class="btn server-btn" onclick="playStream('https://example.com/server3.m3u8')">Server 3</button>
+        </div>
+    </div>
+
+    <script>
+        function openScore() {
+            window.open('https://crex.live/', '_blank');
+        }
+
+        function toggleServers() {
+            let servers = document.getElementById('serverOptions');
+            servers.style.display = servers.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function playStream(url) {
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
