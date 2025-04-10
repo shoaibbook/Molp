@@ -1,120 +1,80 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Daily UI #013 | Direct Messaging</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+  <title>Live Match Links</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+      color: white;
+    }
 
+    .main-btn {
+      font-size: 28px;
+      padding: 20px 40px;
+      background-color: #1e90ff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .main-btn:hover {
+      transform: scale(1.05);
+      background-color: #1c86ee;
+    }
+
+    .links {
+      margin-top: 30px;
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .links button {
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .links button:hover {
+      background-color: #218838;
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="center">
-  <div class="contacts">
-    <i class="fas fa-bars fa-2x"></i>
-    <h2>
-      Contacts
-    </h2>
-    <div class="contact">
-      <div class="pic rogers"></div>
-      <div class="badge">
-        14
-      </div>
-      <div class="name">
-        Steve Rogers
-      </div>
-      <div class="message">
-        That is America's ass 🇺🇸🍑
-      </div>
-    </div>
-    <div class="contact">
-      <div class="pic stark"></div>
-      <div class="name">
-        Tony Stark
-      </div>
-      <div class="message">
-        Uh, he's from space, he came here to steal a necklace from a wizard.
-      </div>
-    </div>
-    <div class="contact">
-      <div class="pic banner"></div>
-      <div class="badge">
-        1
-      </div>
-      <div class="name">
-        Bruce Banner
-      </div>
-      <div class="message">
-        There's an Ant-Man *and* a Spider-Man?
-      </div>
-    </div>
-    <div class="contact">
-      <div class="pic thor"></div>
-      <div class="name">
-        Thor Odinson
-      </div>
-      <div class="badge">
-        3
-      </div>
-      <div class="message">
-        I like this one
-      </div>
-    </div>
-    <div class="contact">
-      <div class="pic danvers"></div>
-      <div class="badge">
-        2
-      </div>
-      <div class="name">
-        Carol Danvers
-      </div>
-      <div class="message">
-        Hey Peter Parker, you got something for me?
-      </div>
-    </div>
+
+  <button class="main-btn" onclick="showLinks()">RCB VS DC</button>
+
+  <div class="links" id="linksContainer">
+    <button onclick="openLink('https://shz.al/~Khel-Box-Willow.html')">LINK 1</button>
+    <button onclick="openLink('https://shz.al/~Khel-Box-WilloSp.html')">LINK 2</button>
+    <button onclick="openLink('https://shz.al/~Khel-Box-hindi.html')">LINK 3</button>
+    <button onclick="openLink('https://shz.al/~Khel-Box-hind.html')">LINK 4</button>
+    <button onclick="openLink('https://shz.al/~Khel-Box-tsport.html')">LINK 5</button>
+    <button onclick="openLink('NOT AVAILABLE')">LINK 6</button>
   </div>
-  <div class="chat">
-    <div class="contact bar">
-      <div class="pic stark"></div>
-      <div class="name">
-        Tony Stark
-      </div>
-      <div class="seen">
-        Today at 12:56
-      </div>
-    </div>
-    <div class="messages" id="chat">
-      <div class="time">
-        Today at 11:41
-      </div>
-      <div class="message parker">
-        Hey, man! What's up, Mr Stark? 👋
-      </div>
-      <div class="message stark">
-        Kid, where'd you come from? 
-      </div>
-      <div class="message parker">
-        Field trip! 🤣
-      </div>
-      <div class="message parker">
-        Uh, what is this guy's problem, Mr. Stark? 🤔
-      </div>
-      <div class="message stark">
-        Uh, he's from space, he came here to steal a necklace from a wizard.
-      </div>
-      <div class="message stark">
-        <div class="typing typing-1"></div>
-        <div class="typing typing-2"></div>
-        <div class="typing typing-3"></div>
-      </div>
-    </div>
-    <div class="input">
-      <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" /><i class="fas fa-microphone"></i>
-    </div>
-  </div>
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+  <script>
+    function showLinks() {
+      document.getElementById('linksContainer').style.display = 'flex';
+    }
+
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
+  </script>
 
 </body>
 </html>
